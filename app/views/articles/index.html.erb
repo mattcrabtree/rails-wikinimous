@@ -1,0 +1,21 @@
+<h1>Top 10 articles</h1>
+
+<ul>
+  <% @articles.each do |a| %>
+    <li>
+      <h3><%= link_to a.title, article_path(a) %></h3>
+      <h4><%= a.content %></h4>
+        <p><%= link_to 'Update', edit_article_path(a) %></p>
+        <p><%= link_to 'Delete', article_path(a), method: :delete, data: {confirm: 'Are you sure?'}%></p>
+
+
+    </li>
+  <% end %>
+</ul>
+
+<ul>
+  <h5><%= link_to 'Create new article', new_article_path%></h5>
+
+
+
+</ul>
